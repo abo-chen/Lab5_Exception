@@ -12,13 +12,9 @@ namespace Lab5_Exception
 
         public void SetRadius(double radius)
         {
-
-            if (radius > 0)
-            {
-                this.radius = radius;
-                throw new InvalidRadiusException();
-            }
-            else { throw new InvalidRadiusException(radius.ToString()); }
+            this.radius = radius;
+            if (radius > 0) { throw new InvalidRadiusException(); }
+            else { throw new InvalidRadiusException(this.ToString()); }
 
         }
         public Circle(double radius)
